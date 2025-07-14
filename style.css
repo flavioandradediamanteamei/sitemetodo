@@ -1,0 +1,92 @@
+body {
+  margin: 0; padding: 0;
+  font-family: sans-serif;
+  background: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  text-align: center;
+  padding: 2rem;
+}
+header h1 {
+  color: #ff6600;
+  font-size: 2.5rem;
+  margin: .5rem 0;
+}
+header h2 {
+  color: #333;
+  font-size: 1.2rem;
+  margin: .3rem 0;
+}
+.impacto {
+  font-style: italic;
+  margin: 1rem 0;
+}
+#video {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#video iframe {
+  width: 100%;
+  height: 340px;
+  border: none;
+}
+#opcoes {
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+.opcao {
+  display: block;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.opcao input[type="radio"] {
+  margin-right: 0.5rem;
+}
+#formulario {
+  width: 90%;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+#formulario form {
+  display: flex;
+  flex-direction: column;
+}
+#formulario input,
+#formulario textarea {
+  padding: .7rem;
+  margin-bottom: .8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+#formulario button.cta {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: .8rem;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#formulario button.cta:hover {
+  background: #222;
+}
+footer {
+  background: #000;
+  color: #fff;
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: .9rem;
+}

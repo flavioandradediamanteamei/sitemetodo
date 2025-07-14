@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Método Robô Clara • Projeto Diamantes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Método Robô Clara</h1>
+    <h2>Projeto Diamantes • Amei Cosméticos com Flávio Andrade</h2>
+    <p class="impacto">“Oportunidade para transformar vidas — começando pela sua.”</p>
+  </header>
+
+  <section id="video">
+    <h3>Confira o vídeo explicativo:</h3>
+    <iframe src="https://www.youtube.com/embed/-nAA7R4fMus" title="Entenda o Projeto" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <section id="opcoes">
+    <h3>Quanto você está disposto(a) a investir?</h3>
+
+    <label class="opcao">
+      <input type="radio" name="investimento" value="Iniciante" required>
+      <strong>Iniciante:</strong> R$ 200,00 a R$ 500,00<br>
+      Compra para uso ou revenda com suporte básico via grupo.
+    </label>
+
+    <label class="opcao">
+      <input type="radio" name="investimento" value="Intermediário">
+      <strong>Intermediário:</strong> R$ 500,00 a R$ 1.500,00<br>
+      Acompanhamento de um líder com foco em renda extra.
+    </label>
+
+    <label class="opcao">
+      <input type="radio" name="investimento" value="Avançado">
+      <strong>Avançado:</strong> R$ 1.500,00 a R$ 3.000,00<br>
+      Treinamento para liderança e ganhos acima de R$ 3.000,00.
+    </label>
+
+    <label class="opcao">
+      <input type="radio" name="investimento" value="Expert">
+      <strong>Expert:</strong> Acima de R$ 3.000,00<br>
+      Contato direto com Flávio e plano para qualificar Diamante.
+    </label>
+  </section>
+
+  <section id="formulario">
+    <h3>Preencha seus dados:</h3>
+    <form id="form">
+      <input name="nome" placeholder="Nome completo" required>
+      <input name="whatsapp" placeholder="WhatsApp (somente números)" required>
+      <input name="email" placeholder="E‑mail" type="email" required>
+      <input name="cidade" placeholder="Cidade/Estado" required>
+
+      <fieldset>
+        <legend>Você já é líder?</legend>
+        <textarea name="experiencia" placeholder="Cite empresas e resultados"></textarea>
+        <p class="detalhe">Já ganhou entre:</p>
+        <label><input type="checkbox" name="ganho" value="R$ 1.000,00 a R$ 3.000,00"> R$ 1.000,00 a R$ 3.000,00</label>
+        <label><input type="checkbox" name="ganho" value="R$ 3.000,00 a R$ 5.000,00"> R$ 3.000,00 a R$ 5.000,00</label>
+        <label><input type="checkbox" name="ganho" value="Acima de R$ 10.000,00"> Acima de R$ 10.000,00</label>
+      </fieldset>
+
+      <button type="submit" class="cta">Quero fazer parte do movimento!</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Projeto Diamantes com o Robô Clara • Amei Cosméticos com Flávio Andrade</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
