@@ -10,7 +10,7 @@ document.getElementById("form").addEventListener("submit", e => {
     return;
   }
 
-  const texto = `🚀 NOVO INTERESSADO NO PROJETO DIAMANTES
+  const texto = `🚀 Flávio Andrade, eu quero fazer parte desse movimento, fico no aguardo... Segue minhas informações para Redirecionamento
 
 👤 Nome: ${info.nome}
 📱 WhatsApp: ${info.whatsapp}
