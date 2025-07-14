@@ -23,6 +23,7 @@ document.getElementById("form").addEventListener("submit", e => {
 🔥 Opção de investimento: ${opcaoSelecionada.value}
 `;
 
-  const link = "https://wa.me/13991020375?text=" + encodeURIComponent(texto);
+  const numeroFlavio = "13991545873"; // SEU número fixo de recebimento
+  const link = "https://wa.me/" + numeroFlavio + "?text=" + encodeURIComponent(texto);
   window.open(link, "_blank");
 });
