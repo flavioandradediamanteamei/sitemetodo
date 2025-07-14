@@ -10,7 +10,7 @@ document.getElementById("form").addEventListener("submit", e => {
     return;
   }
 
-  const texto = `🚀 Flávio Andrade, eu quero fazer parte desse movimento, fico no aguardo... Segue minhas informações para Redirecionamento
+  const texto = `🚀 Flávio Andrade, eu quero fazer parte desse movimento, fico no aguardo... Segue minhas informações para Redirecionamento'
 
 👤 Nome: ${info.nome}
 📱 WhatsApp: ${info.whatsapp}
