@@ -34,11 +34,9 @@
   </header>
 
   <section id="video">
-    <iframe id="meu-video" src="https://www.youtube.com/embed/Ic0YEIO2J1k?enablejsapi=1
-" title="Entenda o Projeto" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <iframe id="meu-video" src="https://www.youtube.com/embed/Ic0YEIO2J1k?enablejsapi=1" title="Entenda o Projeto" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </section>
 
-  <!-- Seções escondidas até 3:40 -->
   <div id="conteudo-revelado">
     <section id="opcoes">
       <h3>Quanto você está disposto(a) a investir?</h3>
@@ -121,6 +119,8 @@ A ativação mensal é de R$ 500,00 (VIP 500 Obrigatória)
   <script src="main.js"></script>
   <script>
     let player;
+    let verificado = false;
+
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('meu-video', {
         events: {
@@ -130,15 +130,22 @@ A ativação mensal é de R$ 500,00 (VIP 500 Obrigatória)
     }
 
     function onPlayerStateChange(event) {
-      if (event.data === YT.PlayerState.PLAYING) {
-        setTimeout(() => {
-          const conteudo = document.getElementById('conteudo-revelado');
-          conteudo.classList.add('mostrar');
-          window.scrollTo({
-            top: conteudo.offsetTop,
-            behavior: 'smooth'
-          });
-        }, 220000); // 3 minutos e 40 segundos
+      if (event.data === YT.PlayerState.PLAYING && !verificado) {
+        verificado = true;
+
+        const intervalo = setInterval(() => {
+          const tempoAtual = player.getCurrentTime();
+
+          if (tempoAtual >= 220) { // 3min40s
+            clearInterval(intervalo);
+            const conteudo = document.getElementById('conteudo-revelado');
+            conteudo.classList.add('mostrar');
+            window.scrollTo({
+              top: conteudo.offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        }, 1000);
       }
     }
 
