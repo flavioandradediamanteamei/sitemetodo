@@ -18,13 +18,6 @@ header {
   white-space: nowrap;
 }
 
-@media (max-width: 480px) {
-  .titulo-responsivo {
-    font-size: 1.8rem;
-    white-space: normal;
-  }
-}
-
 header h2 {
   color: #333;
   font-size: 1.2rem;
@@ -171,4 +164,30 @@ footer {
   padding: 1rem 0;
   text-align: center;
   font-size: .9rem;
+}
+
+/* 📱 Ajustes para telas pequenas (responsivo) */
+@media (max-width: 768px) {
+  .titulo-responsivo {
+    font-size: 2rem;
+    white-space: normal;
+  }
+
+  .opcao .descricao {
+    padding-left: 0;
+  }
+
+  .linha-radio {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #formulario label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #formulario input[type="checkbox"] {
+    transform: scale(1.2);
+  }
 }
