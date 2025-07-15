@@ -157,3 +157,26 @@ footer {
   text-align: center;
   font-size: .9rem;
 }
+
+/* ✅ ESTILO DO BOTÃO QUE APARECE APÓS 3:40 DO VÍDEO */
+#botao-movimento {
+  display: none;
+  margin: 40px auto 20px;
+  padding: 15px 30px;
+  background-color: #000;
+  color: orange;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid orange;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 1s ease;
+  opacity: 0;
+  max-width: 90%;
+}
+
+#botao-movimento.show {
+  display: block;
+  opacity: 1;
+}
