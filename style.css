@@ -30,10 +30,10 @@ header {
   height: 450px;
 }
 
-/* RESPONSIVIDADE PARA O VÍDEO NO CELULAR */
+/* ✅ AJUSTE IDEAL PARA CELULAR */
 @media (max-width: 600px) {
   #meu-video iframe {
-    height: 250px;
+    height: 200px;
   }
 }
 
