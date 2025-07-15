@@ -1,4 +1,4 @@
-document.getElementById("form").addEventListener("submit", e => {
+document.getElementById("form").addEventListener("submit", (e) => {
   e.preventDefault();
 
   const dados = new FormData(e.target);
@@ -10,7 +10,11 @@ document.getElementById("form").addEventListener("submit", e => {
     return;
   }
 
-  const texto = `🚀 Flávio Andrade, eu quero fazer parte desse movimento, fico no aguardo... Segue minhas informações para Redirecionamento'
+  const ganhosSelecionados = Array.from(
+    document.querySelectorAll('input[name="ganho"]:checked')
+  ).map((el) => el.value).join(", ");
+
+  const texto = `🚀 Flávio Andrade, eu quero fazer parte desse movimento, fico no aguardo... Segue minhas informações para redirecionamento:
 
 👤 Nome: ${info.nome}
 📱 WhatsApp: ${info.whatsapp}
@@ -18,12 +22,12 @@ document.getElementById("form").addEventListener("submit", e => {
 📍 Cidade: ${info.cidade}
 
 💼 Já é líder? ${info.experiencia || "Não informado"}
-💸 Já ganhou entre: ${Array.from(document.querySelectorAll('input[name="ganho"]:checked')).map(el => el.value).join(", ") || "Não informado"}
+💸 Já ganhou entre: ${ganhosSelecionados || "Não informado"}
 
 🔥 Opção de investimento: ${opcaoSelecionada.value}
 `;
 
-  const numeroFlavio = "13991545873"; // SEU número fixo de recebimento
+  const numeroFlavio = "13991545873"; // Seu número de WhatsApp
   const link = "https://wa.me/" + numeroFlavio + "?text=" + encodeURIComponent(texto);
   window.open(link, "_blank");
 });
