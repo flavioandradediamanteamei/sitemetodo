@@ -2,9 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Método Robô Clara • Projeto Diamantes</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -14,7 +14,7 @@
   </header>
 
   <section id="video">
-    <iframe id="meu-video" src="https://www.youtube.com/embed/Ic0YEIO2J1k?enablejsapi=1" title="Entenda o Projeto" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <iframe id="meu-video" src="https://www.youtube.com/embed/Ic0YEIO2J1k?enablejsapi=1" title="Entenda o Projeto" frameborder="0" allowfullscreen></iframe>
   </section>
 
   <div id="conteudo-revelado">
@@ -26,9 +26,10 @@
           <input type="radio" name="investimento" value="Iniciante" required>
           <strong>Iniciante:</strong> R$ 200,00 a R$ 500,00
         </div>
-        <span class="descricao">
-          Ideal para quem está começando e quer conhecer os produtos da Amei Cosméticos. A revenda é feita de forma independente, com acesso aos treinamentos básicos nos grupos da empresa.
-        </span>
+        <span class="descricao">Ideal para quem está começando e quer conhecer os produtos da Amei Cosméticos.
+A revenda é feita de forma independente, com acesso aos treinamentos básicos nos grupos da empresa.
+Você será redirecionado(a) a um líder apenas para suporte inicial, sem acompanhamento estratégico.
+Perfeito para dar o primeiro passo e testar a qualidade dos produtos.</span>
       </label>
 
       <label class="opcao">
@@ -36,9 +37,10 @@
           <input type="radio" name="investimento" value="Intermediário">
           <strong>Intermediário:</strong> R$ 500,00 a R$ 1.500,00
         </div>
-        <span class="descricao">
-          Para quem busca renda extra, com potencial de lucros proporcionais ao investimento. Você recebe acompanhamento de um líder do time do Flávio Andrade.
-        </span>
+        <span class="descricao">Para quem busca renda extra, com potencial de lucros proporcionais ao Investimento.
+Nessa modalidade, você recebe acompanhamento de um líder do time do Flávio Andrade, com foco em estratégias de vendas e geração de resultados.
+Indicado para quem já entendeu que, para ganhar mais, é necessário ter produtos disponíveis.
+Com essa estrutura, é possível alcançar uma renda mensal de até R$ 1.500,00.(seguindo nosso método)</span>
       </label>
 
       <label class="opcao">
@@ -46,9 +48,9 @@
           <input type="radio" name="investimento" value="Avançado">
           <strong>Avançado:</strong> R$ 1.500,00 a R$ 3.000,00
         </div>
-        <span class="descricao">
-          Para vendedores experientes que querem crescer rápido. Acompanhamento com mentor capacitado da equipe do Flávio Andrade.
-        </span>
+        <span class="descricao">Indicado para vendedores experientes que querem crescer rápido ou que já atuam no mercado e buscam se tornar líderes de equipe.
+Você será acompanhado(a) por um mentor mais capacitado dentro do time do Flávio Andrade, com foco em liderança, expansão e lucros acima de R$ 3.000,00.(seguindo nosso método)
+A proposta aqui é treinar você para formar time, atrair pessoas e escalar sua revenda com consistência.</span>
       </label>
 
       <label class="opcao">
@@ -56,9 +58,14 @@
           <input type="radio" name="investimento" value="Expert">
           <strong>Mentoria com Flávio Andrade:</strong> Acima de R$ 3.000,00
         </div>
-        <span class="descricao">
-          Plano com acesso direto ao Flávio Andrade. Inclui mentoria individual via WhatsApp 🧠, grupo exclusivo e distribuição de leads.
-        </span>
+        <span class="descricao">Esse é o plano com acesso direto ao Flávio Andrade, incluindo:
+Mentoria individual via WhatsApp 🧠
+Grupo exclusivo com treinamentos intensivos
+Apoio estratégico para formar time e qualificar Diamante em até 90 dias (seguindo o método proposto)
+Distribuição de leads vindos das campanhas e cadastros da equipe
+Ideal para quem quer liderar com força e iniciar no projeto com visão de longo prazo.
+📌 Investimento acima de R$ 3.000,00 é referente à compra inicial.
+A ativação mensal é de R$ 500,00 (VIP 500 Obrigatória)</span>
       </label>
     </section>
 
@@ -73,10 +80,10 @@
         <fieldset>
           <legend>Você já é líder?</legend>
           <textarea name="experiencia" placeholder="Cite empresas e resultados"></textarea>
-          <p class="detalhe">Quanto já ganhou nesse mercado?</p>
+          <p class="detalhe">Já em média quanto nesse mercado?</p>
           <label><input type="checkbox" name="ganho" value="R$ 1.000,00 a R$ 3.000,00"> R$ 1.000,00 a R$ 3.000,00</label>
           <label><input type="checkbox" name="ganho" value="R$ 3.000,00 a R$ 5.000,00"> R$ 3.000,00 a R$ 5.000,00</label>
-          <label><input type="checkbox" name="ganho" value="Acima de R$ 5.000,00"> Acima de R$ 5.000,00</label>
+          <label><input type="checkbox" name="ganho" value="Acima de R$ 10.000,00"> Acima de R$ 5.000,00</label>
         </fieldset>
 
         <button type="submit" class="cta">🚀 Quero fazer parte do movimento! 🚀</button>
@@ -87,6 +94,41 @@
       <p>Projeto Diamantes com o Robô Clara • Amei Cosméticos com Flávio Andrade</p>
     </footer>
   </div>
+
+  <script>
+    let player;
+    let verificado = false;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('meu-video', {
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.PLAYING && !verificado) {
+        verificado = true;
+        const intervalo = setInterval(() => {
+          const tempoAtual = player.getCurrentTime();
+          if (tempoAtual >= 220) {
+            clearInterval(intervalo);
+            const conteudo = document.getElementById('conteudo-revelado');
+            conteudo.classList.add('mostrar');
+            window.scrollTo({
+              top: conteudo.offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        }, 1000);
+      }
+    }
+
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
+  </script>
 
   <script src="main.js"></script>
 </body>
