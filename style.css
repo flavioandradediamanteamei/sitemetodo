@@ -158,7 +158,7 @@ footer {
   font-size: .9rem;
 }
 
-/* ✅ ESTILO DO BOTÃO QUE APARECE APÓS 3:40 DO VÍDEO */
+/* ❌ ESTILO ANTIGO DO BOTÃO — MANTIDO CASO VOLTE A USAR */
 #botao-movimento {
   display: none;
   margin: 40px auto 20px;
@@ -178,5 +178,17 @@ footer {
 
 #botao-movimento.show {
   display: block;
+  opacity: 1;
+}
+
+/* ✅ NOVO: CONTEÚDO QUE SÓ APARECE DEPOIS DE 3:40 DO VÍDEO */
+#conteudo-revelado {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#conteudo-revelado.mostrar {
+  display: block !important;
   opacity: 1;
 }
