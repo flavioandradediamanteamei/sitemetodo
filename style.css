@@ -1,31 +1,32 @@
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background: #fff;
-  color: #000;
+  line-height: 1.6;
+  background-color: #fff;
 }
 
 header {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 20px;
 }
 
-.titulo-responsivo {
-  color: #ff6600;
-  font-size: 2.5rem;
-  margin: .5rem 0;
+h1.titulo-responsivo {
+  font-size: 2.2rem;
+  color: orange;
+  margin-bottom: 10px;
 }
 
-header h2 {
+h2 {
+  font-size: 1.1rem;
   color: #333;
-  font-size: 1.2rem;
-  margin: .3rem 0;
+  margin: 0;
 }
 
-.impacto {
+p.impacto {
   font-style: italic;
-  margin: 1rem 0;
+  font-size: 0.95rem;
+  margin-top: 5px;
 }
 
 .video-container {
@@ -33,7 +34,7 @@ header h2 {
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  max-width: 700px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -43,127 +44,146 @@ header h2 {
   left: 0;
   width: 100%;
   height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
 }
 
 #conteudo-revelado {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 1rem;
   display: none;
   opacity: 0;
   transition: opacity 1s ease;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 #conteudo-revelado.mostrar {
-  display: block !important;
+  display: block;
   opacity: 1;
 }
 
-#opcoes,
-#formulario {
-  width: 100%;
-  margin-bottom: 2rem;
+#opcoes {
+  margin-bottom: 40px;
 }
 
 .opcao {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
 }
 
 .linha-radio {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 10px;
+  margin-bottom: 5px;
 }
 
-.opcao input[type="radio"],
-#formulario input[type="checkbox"] {
-  transform: scale(1.2);
-  cursor: pointer;
+.opcao strong {
+  font-size: 1rem;
 }
 
-.opcao .descricao {
-  font-size: 0.95rem;
-  color: #333;
-  line-height: 1.4;
-  margin-left: 1.8rem;
+.descricao {
+  font-size: 0.9rem;
+  color: #555;
+  margin-left: 28px;
+  display: block;
 }
 
-#formulario form {
+#formulario {
+  margin-top: 40px;
+}
+
+form {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
-#formulario input,
-#formulario textarea {
-  width: 100%;
-  padding: .7rem;
-  margin-bottom: .8rem;
+input,
+textarea {
+  padding: 10px;
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-#formulario .grupo-checkbox {
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.detalhe {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.grupo-checkbox {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
-  margin-top: 0.5rem;
+  gap: 8px;
 }
 
-#formulario .grupo-checkbox label {
+.grupo-checkbox label {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 1rem;
+  gap: 10px;
+  font-size: 0.95rem;
 }
 
-#formulario .detalhe {
-  font-size: .9rem;
-  color: #333;
-  margin: 1rem 0 0.3rem;
-  font-weight: bold;
-}
-
-#formulario button.cta {
-  background: #000;
-  color: #fff;
+button.cta {
+  background-color: black;
+  color: white;
   border: none;
-  padding: .8rem;
-  font-size: 1.1rem;
-  border-radius: 4px;
+  padding: 14px;
+  font-size: 1rem;
   cursor: pointer;
-  margin-top: 1rem;
-  width: 100%;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+button.cta:hover {
+  background-color: #333;
 }
 
 footer {
-  background: #000;
-  color: #fff;
   text-align: center;
-  padding: 1rem 0;
-  font-size: .9rem;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 40px;
 }
 
 @media (max-width: 768px) {
-  .titulo-responsivo {
-    font-size: 2rem;
-    white-space: normal;
+  .video-container iframe {
+    max-width: 100%;
+    height: auto;
   }
 
-  .linha-radio,
-  .grupo-checkbox label {
+  .linha-radio {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
   }
 
-  .opcao .descricao {
-    margin-left: 0;
+  .descricao {
+    margin-left: 25px;
   }
 }
