@@ -139,6 +139,13 @@ header h2 {
   cursor: pointer;
 }
 
+#formulario .grupo-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
 #formulario .detalhe {
   font-size: .9rem;
   color: #333;
@@ -195,5 +202,10 @@ footer {
 
   #formulario input[type="checkbox"] {
     transform: scale(1.2);
+  }
+
+  #formulario .grupo-checkbox label {
+    flex-direction: row;
+    align-items: center;
   }
 }
