@@ -13,77 +13,44 @@
     <p class="impacto">“Oportunidade para transformar vidas — começando pela sua.”</p>
   </header>
 
-  <section id="video">
-    <div class="video-container">
-      <div id="meu-video"></div> <!-- Placeholder do player YouTube injetado via JS -->
-    </div>
-  </section>
+  <div class="video-container">
+    <div id="meu-video"></div>
+  </div>
 
-  <div id="conteudo-revelado">
-    <section id="opcoes">
+  <div id="conteudo-revelado" class="formulario">
+    <form id="form">
       <h3>Quanto você está disposto(a) a investir?</h3>
 
-      <label class="opcao">
-        <div class="linha-radio">
-          <input type="radio" name="investimento" value="Iniciante" required />
-          <strong>Iniciante:</strong> R$ 200,00 a R$ 500,00
-        </div>
-        <span class="descricao">Ideal para quem está começando e quer conhecer os produtos da Amei Cosméticos...</span>
-      </label>
+      <label><input type="radio" name="investimento" value="Iniciante"> <strong>Iniciante:</strong> R$ 200,00 a R$ 500,00<br><small>Ideal para quem está começando e quer conhecer os produtos da Amei Cosméticos...</small></label>
 
-      <label class="opcao">
-        <div class="linha-radio">
-          <input type="radio" name="investimento" value="Intermediário" />
-          <strong>Intermediário:</strong> R$ 500,00 a R$ 1.500,00
-        </div>
-        <span class="descricao">Para quem busca renda extra, com potencial de lucros proporcionais ao investimento...</span>
-      </label>
+      <label><input type="radio" name="investimento" value="Intermediário"> <strong>Intermediário:</strong> R$ 500,00 a R$ 1.500,00<br><small>Para quem busca renda extra, com potencial de lucros proporcionais ao investimento...</small></label>
 
-      <label class="opcao">
-        <div class="linha-radio">
-          <input type="radio" name="investimento" value="Avançado" />
-          <strong>Avançado:</strong> R$ 1.500,00 a R$ 3.000,00
-        </div>
-        <span class="descricao">Indicado para vendedores experientes que querem crescer rápido...</span>
-      </label>
+      <label><input type="radio" name="investimento" value="Avançado"> <strong>Avançado:</strong> R$ 1.500,00 a R$ 3.000,00<br><small>Indicado para vendedores experientes que querem crescer rápido...</small></label>
 
-      <label class="opcao">
-        <div class="linha-radio">
-          <input type="radio" name="investimento" value="Expert" />
-          <strong>Mentoria com Flávio Andrade:</strong> Acima de R$ 3.000,00
-        </div>
-        <span class="descricao">Esse é o plano com acesso direto ao Flávio Andrade, incluindo mentoria e suporte premium.</span>
-      </label>
-    </section>
+      <label><input type="radio" name="investimento" value="Mentoria com Flávio Andrade"> <strong>Mentoria com Flávio Andrade:</strong> Acima de R$ 3.000,00<br><small>Esse é o plano com acesso direto ao Flávio Andrade, incluindo mentoria e suporte premium.</small></label>
 
-    <section id="formulario">
       <h3>Preencha seus dados:</h3>
-      <form id="form">
-        <input name="nome" placeholder="Nome completo" required />
-        <input name="whatsapp" placeholder="WhatsApp (somente números)" required />
-        <input name="email" type="email" placeholder="E‑mail" required />
-        <input name="cidade" placeholder="Cidade/Estado" required />
 
-        <fieldset>
-          <legend>Você já é líder?</legend>
-          <textarea name="experiencia" placeholder="Cite empresas e resultados"></textarea>
+      <input type="text" name="nome" placeholder="Nome completo" required />
+      <input type="tel" name="whatsapp" placeholder="WhatsApp (somente números)" required />
+      <input type="email" name="email" placeholder="E-mail" required />
+      <input type="text" name="cidade" placeholder="Cidade/Estado" required />
+      <textarea name="experiencia" placeholder="Cite empresas e resultados"></textarea>
 
-          <p class="detalhe">Já em média quanto nesse mercado?</p>
-          <div class="grupo-checkbox">
-            <label><input type="checkbox" name="ganho" value="R$ 1.000,00 a R$ 3.000,00" /> R$ 1.000,00 a R$ 3.000,00</label>
-            <label><input type="checkbox" name="ganho" value="R$ 3.000,00 a R$ 5.000,00" /> R$ 3.000,00 a R$ 5.000,00</label>
-            <label><input type="checkbox" name="ganho" value="Acima de R$ 5.000,00" /> Acima de R$ 5.000,00</label>
-          </div>
-        </fieldset>
+      <h4>Já em média quanto nesse mercado?</h4>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="ganho" value="R$ 1.000,00 a R$ 3.000,00"> R$ 1.000,00 a R$ 3.000,00</label>
+        <label><input type="checkbox" name="ganho" value="R$ 3.000,00 a R$ 5.000,00"> R$ 3.000,00 a R$ 5.000,00</label>
+        <label><input type="checkbox" name="ganho" value="Acima de R$ 5.000,00"> Acima de R$ 5.000,00</label>
+      </div>
 
-        <button type="submit" class="cta">🚀 Quero fazer parte do movimento! 🚀</button>
-      </form>
-    </section>
-
-    <footer>
-      <p>Projeto Diamantes com o Robô Clara • Amei Cosméticos com Flávio Andrade</p>
-    </footer>
+      <button type="submit">🚀 Quero fazer parte do movimento! 🚀</button>
+    </form>
   </div>
+
+  <footer>
+    Projeto Diamantes com o Robô Clara • Amei Cosméticos com Flávio Andrade
+  </footer>
 
   <script src="main.js"></script>
 </body>
