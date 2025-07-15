@@ -61,6 +61,14 @@
       max-width: 700px;
       margin: 0 auto;
       padding: 0 1rem;
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    #conteudo-revelado.mostrar {
+      display: block !important;
+      opacity: 1;
     }
 
     #opcoes {
@@ -167,40 +175,124 @@
       text-align: center;
       font-size: .9rem;
     }
-
-    #botao-movimento {
-      display: none;
-      margin: 40px auto 20px;
-      padding: 15px 30px;
-      background-color: #000;
-      color: orange;
-      font-size: 18px;
-      font-weight: bold;
-      border: 2px solid orange;
-      border-radius: 8px;
-      text-align: center;
-      cursor: pointer;
-      transition: opacity 1s ease;
-      opacity: 0;
-      max-width: 90%;
-    }
-
-    #botao-movimento.show {
-      display: block;
-      opacity: 1;
-    }
-
-    #conteudo-revelado {
-      display: none;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-
-    #conteudo-revelado.mostrar {
-      display: block !important;
-      opacity: 1;
-    }
   </style>
 </head>
 <body>
-<!-- Conteúdo do body continua igual daqui pra frente -->
+  <header>
+    <h1 class="titulo-responsivo">Método Robô Clara</h1>
+    <h2>Projeto Diamantes • Amei Cosméticos com Flávio Andrade</h2>
+    <p class="impacto">“Oportunidade para transformar vidas — começando pela sua.”</p>
+  </header>
+
+  <section id="video">
+    <iframe id="meu-video" src="https://www.youtube.com/embed/Ic0YEIO2J1k?enablejsapi=1" title="Entenda o Projeto" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </section>
+
+  <div id="conteudo-revelado">
+    <section id="opcoes">
+      <h3>Quanto você está disposto(a) a investir?</h3>
+
+      <label class="opcao">
+        <div class="linha-radio">
+          <input type="radio" name="investimento" value="Iniciante" required>
+          <strong>Iniciante:</strong> R$ 200,00 a R$ 500,00
+        </div>
+        <span class="descricao">Ideal para quem está começando e quer conhecer os produtos da Amei Cosméticos.
+A revenda é feita de forma independente, com acesso aos treinamentos básicos nos grupos da empresa.
+Você será redirecionado(a) a um líder apenas para suporte inicial, sem acompanhamento estratégico.
+Perfeito para dar o primeiro passo e testar a qualidade dos produtos.</span>
+      </label>
+
+      <label class="opcao">
+        <div class="linha-radio">
+          <input type="radio" name="investimento" value="Intermediário">
+          <strong>Intermediário:</strong> R$ 500,00 a R$ 1.500,00
+        </div>
+        <span class="descricao">Para quem busca renda extra, com potencial de lucros proporcionais ao investimento.
+Você recebe acompanhamento de um líder do time do Flávio Andrade, com foco em vendas e geração de resultados.
+Com essa estrutura, é possível alcançar uma renda mensal de até R$ 1.500,00 (seguindo nosso método).</span>
+      </label>
+
+      <label class="opcao">
+        <div class="linha-radio">
+          <input type="radio" name="investimento" value="Avançado">
+          <strong>Avançado:</strong> R$ 1.500,00 a R$ 3.000,00
+        </div>
+        <span class="descricao">Para vendedores experientes que querem crescer rápido ou que já atuam no mercado e buscam se tornar líderes.
+Você será acompanhado por um mentor capacitado da equipe do Flávio Andrade, com foco em expansão e lucros acima de R$ 3.000,00.</span>
+      </label>
+
+      <label class="opcao">
+        <div class="linha-radio">
+          <input type="radio" name="investimento" value="Expert">
+          <strong>Mentoria com Flávio Andrade:</strong> Acima de R$ 3.000,00
+        </div>
+        <span class="descricao">Plano com acesso direto ao Flávio Andrade, incluindo:
+Mentoria individual via WhatsApp 🧠, grupo exclusivo com treinamentos intensivos, e distribuição de leads.
+Ideal para quem quer liderar com força e qualificar Diamante em até 90 dias (seguindo o método).
+📌 Ativação mensal: R$ 500,00 (VIP 500 obrigatória)</span>
+      </label>
+    </section>
+
+    <section id="formulario">
+      <h3>Preencha seus dados:</h3>
+      <form id="form">
+        <input name="nome" placeholder="Nome completo" required>
+        <input name="whatsapp" placeholder="WhatsApp (somente números)" required>
+        <input name="email" placeholder="E‑mail" type="email" required>
+        <input name="cidade" placeholder="Cidade/Estado" required>
+
+        <fieldset>
+          <legend>Você já é líder?</legend>
+          <textarea name="experiencia" placeholder="Cite empresas e resultados"></textarea>
+          <p class="detalhe">Quanto já ganhou nesse mercado?</p>
+          <label><input type="checkbox" name="ganho" value="R$ 1.000,00 a R$ 3.000,00"> R$ 1.000,00 a R$ 3.000,00</label>
+          <label><input type="checkbox" name="ganho" value="R$ 3.000,00 a R$ 5.000,00"> R$ 3.000,00 a R$ 5.000,00</label>
+          <label><input type="checkbox" name="ganho" value="Acima de R$ 10.000,00"> Acima de R$ 5.000,00</label>
+        </fieldset>
+
+        <button type="submit" class="cta">🚀 Quero fazer parte do movimento! 🚀</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>Projeto Diamantes com o Robô Clara • Amei Cosméticos com Flávio Andrade</p>
+    </footer>
+  </div>
+
+  <script>
+    let player;
+    let verificado = false;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('meu-video', {
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.PLAYING && !verificado) {
+        verificado = true;
+        const intervalo = setInterval(() => {
+          const tempoAtual = player.getCurrentTime();
+          if (tempoAtual >= 220) {
+            clearInterval(intervalo);
+            const conteudo = document.getElementById('conteudo-revelado');
+            conteudo.classList.add('mostrar');
+            window.scrollTo({
+              top: conteudo.offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        }, 1000);
+      }
+    }
+
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
+  </script>
+</body>
+</html>
