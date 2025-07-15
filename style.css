@@ -3,8 +3,6 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background: #fff;
-  color: #000;
 }
 
 header {
@@ -12,38 +10,27 @@ header {
 }
 
 .titulo-responsivo {
-  color: #ff6600;
-  font-size: 2.5rem;
-  margin: .5rem 0;
-}
-
-header h2 {
-  color: #333;
-  font-size: 1.2rem;
-  margin: .3rem 0;
+  color: orange;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .impacto {
   font-style: italic;
-  margin: 1rem 0;
+  font-size: 16px;
+  margin-top: 5px;
 }
 
 .video-container {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 10px;
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
 }
 
 iframe#meu-video {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  max-width: 800px;
+  height: 450px;
   display: block;
   margin: 0 auto;
 }
@@ -53,14 +40,15 @@ iframe#meu-video {
   opacity: 0;
   transition: opacity 1s ease;
   padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
 }
 
 #conteudo-revelado.mostrar {
   display: block;
   opacity: 1;
+}
+
+#opcoes {
+  margin-top: 40px;
 }
 
 .opcao {
@@ -83,8 +71,6 @@ iframe#meu-video {
 .descricao {
   font-size: 14px;
   color: #555;
-  margin-left: 28px;
-  margin-top: 5px;
 }
 
 form {
@@ -116,13 +102,8 @@ fieldset {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
   font-size: 16px;
-}
-
-.grupo-checkbox input[type="checkbox"] {
-  transform: scale(1.2);
-  cursor: pointer;
+  margin-bottom: 10px;
 }
 
 button.cta {
@@ -142,27 +123,5 @@ footer {
   color: white;
   padding: 20px;
   font-size: 14px;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .titulo-responsivo {
-    font-size: 2rem;
-    white-space: normal;
-  }
-
-  .linha-radio,
-  .grupo-checkbox label {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .descricao {
-    margin-left: 0;
-  }
-
-  iframe#meu-video {
-    height: auto;
-    aspect-ratio: 16 / 9;
-  }
+  margin-top: 40px;
 }
