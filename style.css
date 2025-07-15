@@ -15,7 +15,6 @@ header {
   color: #ff6600;
   font-size: 2.5rem;
   margin: .5rem 0;
-  white-space: nowrap;
 }
 
 header h2 {
@@ -29,24 +28,27 @@ header h2 {
   margin: 1rem 0;
 }
 
-#video {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto 2rem auto;
-  padding: 0 1rem;
-  text-align: center;
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-#video iframe {
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 340px;
-  border: none;
+  height: 100%;
 }
 
 #conteudo-revelado {
   max-width: 700px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 1rem;
   display: none;
   opacity: 0;
   transition: opacity 1s ease;
@@ -60,10 +62,7 @@ header h2 {
 #opcoes,
 #formulario {
   width: 100%;
-  max-width: 700px;
-  margin: 0 auto 2rem auto;
-  padding: 0 1rem;
-  box-sizing: border-box;
+  margin-bottom: 2rem;
 }
 
 .opcao {
@@ -75,26 +74,25 @@ header h2 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  cursor: pointer;
 }
 
-.opcao .linha-radio {
+.linha-radio {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  flex-wrap: wrap;
 }
 
-.opcao input[type="radio"] {
+.opcao input[type="radio"],
+#formulario input[type="checkbox"] {
   transform: scale(1.2);
   cursor: pointer;
 }
 
 .opcao .descricao {
-  padding-left: 2rem;
   font-size: 0.95rem;
   color: #333;
   line-height: 1.4;
+  margin-left: 1.8rem;
 }
 
 #formulario form {
@@ -110,47 +108,25 @@ header h2 {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
-  box-sizing: border-box;
-}
-
-#formulario fieldset {
-  border: none;
-  margin-top: 1rem;
-  padding: 0;
-}
-
-#formulario legend {
-  font-weight: bold;
-  margin-bottom: .5rem;
 }
 
 #formulario .grupo-checkbox {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.7rem;
   margin-top: 0.5rem;
-  padding-left: 0.5rem;
 }
 
 #formulario .grupo-checkbox label {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  padding: 0.2rem 0;
-}
-
-#formulario input[type="checkbox"] {
-  transform: scale(1.2);
-  cursor: pointer;
 }
 
 #formulario .detalhe {
   font-size: .9rem;
   color: #333;
-  margin-top: 1rem;
-  margin-bottom: .3rem;
+  margin: 1rem 0 0.3rem;
   font-weight: bold;
 }
 
@@ -166,47 +142,27 @@ header h2 {
   width: 100%;
 }
 
-#formulario button.cta:hover {
-  background: #222;
-}
-
 footer {
   background: #000;
   color: #fff;
-  width: 100%;
-  padding: 1rem 0;
   text-align: center;
+  padding: 1rem 0;
   font-size: .9rem;
 }
 
-/* 📱 Responsivo */
 @media (max-width: 768px) {
   .titulo-responsivo {
     font-size: 2rem;
     white-space: normal;
   }
 
-  .opcao .descricao {
-    padding-left: 0;
-  }
-
-  .linha-radio {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  #formulario label {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  #formulario .grupo-checkbox {
-    padding-left: 0;
-  }
-
-  #formulario .grupo-checkbox label {
+  .linha-radio,
+  .grupo-checkbox label {
     flex-direction: row;
     align-items: center;
-    gap: 0.6rem;
+  }
+
+  .opcao .descricao {
+    margin-left: 0;
   }
 }
