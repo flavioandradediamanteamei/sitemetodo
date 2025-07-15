@@ -5,6 +5,38 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Método Robô Clara • Projeto Diamantes</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilo do botão que aparece após o vídeo */
+    #botao-movimento {
+      display: none;
+      margin: 40px auto 20px;
+      padding: 15px 30px;
+      background-color: #000;
+      color: orange;
+      font-size: 18px;
+      font-weight: bold;
+      border: 2px solid orange;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: opacity 1s ease;
+      opacity: 0;
+      max-width: 90%;
+    }
+
+    #botao-movimento.show {
+      display: block;
+      opacity: 1;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -14,7 +46,8 @@
   </header>
 
   <section id="video">
-    <iframe src="https://www.youtube.com/embed/-nAA7R4fMus" title="Entenda o Projeto" frameborder="0" allowfullscreen></iframe>
+    <iframe id="meu-video" src="https://www.youtube.com/embed/-nAA7R4fMus?enablejsapi=1" title="Entenda o Projeto" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div id="botao-movimento">📣 CLIQUE PARA FAZER PARTE DESSE MOVIMENTO 📣</div>
   </section>
 
   <section id="opcoes">
@@ -27,7 +60,7 @@
       </div>
       <span class="descricao">Ideal para quem está começando e quer conhecer os produtos da Amei Cosméticos.
 A revenda é feita de forma independente, com acesso aos treinamentos básicos nos grupos da empresa.
-Você será redirecionado(a) a um líder para suporte inicial.
+Você será redirecionado(a) a um líder apenas para suporte inicial, sem acompanhamento estratégico.
 Perfeito para dar o primeiro passo e testar a qualidade dos produtos.</span>
     </label>
 
@@ -95,5 +128,31 @@ A ativação mensal é de R$ 500,00 (VIP 500 Obrigatória)
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    // Esperar a API do YouTube carregar
+    let player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('meu-video', {
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.PLAYING) {
+        setTimeout(() => {
+          const botao = document.getElementById('botao-movimento');
+          botao.classList.add('show');
+        }, 220000); // 3 minutos e 40 segundos = 220 mil milissegundos
+      }
+    }
+
+    // Carregar script da API do YouTube
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  </script>
 </body>
 </html>
