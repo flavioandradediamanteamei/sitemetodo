@@ -3,7 +3,9 @@ let verificado = false;
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("meu-video", {
-    events: { onStateChange: onPlayerStateChange }
+    events: {
+      onStateChange: onPlayerStateChange,
+    },
   });
 }
 
@@ -43,7 +45,11 @@ document.getElementById("form").addEventListener("submit", (e) => {
     return;
   }
 
-  const ganhosSelecionados = Array.from(document.querySelectorAll('input[name="ganho"]:checked')).map(el => el.value).join(", ");
+  const ganhosSelecionados = Array.from(
+    document.querySelectorAll('input[name="ganho"]:checked')
+  )
+    .map((el) => el.value)
+    .join(", ");
 
   const texto = `🚀 Flávio Andrade, eu quero fazer parte desse movimento, fico no aguardo...
 
