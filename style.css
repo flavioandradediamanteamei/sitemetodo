@@ -2,8 +2,6 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-  background-color: #fff;
 }
 
 header {
@@ -11,42 +9,25 @@ header {
   padding: 20px;
 }
 
-h1.titulo-responsivo {
-  font-size: 2.2rem;
+.titulo-responsivo {
+  font-size: 28px;
   color: orange;
-  margin-bottom: 10px;
 }
 
-h2 {
-  font-size: 1.1rem;
-  color: #333;
-  margin: 0;
-}
-
-p.impacto {
+.impacto {
   font-style: italic;
-  font-size: 0.95rem;
-  margin-top: 5px;
 }
 
 .video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
 .video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
   max-width: 800px;
-  margin: 0 auto;
-  display: block;
+  height: 450px;
 }
 
 #conteudo-revelado {
@@ -54,8 +35,6 @@ p.impacto {
   opacity: 0;
   transition: opacity 1s ease;
   padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 #conteudo-revelado.mostrar {
@@ -63,127 +42,68 @@ p.impacto {
   opacity: 1;
 }
 
-#opcoes {
-  margin-bottom: 40px;
-}
-
-.opcao {
+#opcoes label.opcao {
   display: block;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 15px;
-  margin-bottom: 15px;
-  background-color: #f9f9f9;
+  margin-bottom: 20px;
 }
 
 .linha-radio {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 5px;
-}
-
-.opcao strong {
-  font-size: 1rem;
 }
 
 .descricao {
-  font-size: 0.9rem;
-  color: #555;
-  margin-left: 28px;
   display: block;
-}
-
-#formulario {
-  margin-top: 40px;
+  font-size: 14px;
+  margin-left: 30px;
 }
 
 form {
+  max-width: 600px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
-input,
 textarea {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   width: 100%;
-  box-sizing: border-box;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 80px;
+  height: 80px;
 }
 
 fieldset {
   border: none;
-  padding: 0;
-}
-
-legend {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.detalhe {
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 8px;
+  margin-top: 20px;
 }
 
 .grupo-checkbox {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .grupo-checkbox label {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.95rem;
 }
 
-button.cta {
+.cta {
+  margin-top: 20px;
   background-color: black;
   color: white;
+  font-size: 16px;
+  padding: 12px;
   border: none;
-  padding: 14px;
-  font-size: 1rem;
   cursor: pointer;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-button.cta:hover {
-  background-color: #333;
 }
 
 footer {
   text-align: center;
-  padding: 20px;
-  background-color: black;
+  background: black;
   color: white;
-  font-size: 0.9rem;
+  padding: 20px;
   margin-top: 40px;
-}
-
-@media (max-width: 768px) {
-  .video-container iframe {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .linha-radio {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .descricao {
-    margin-left: 25px;
-  }
 }
