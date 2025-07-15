@@ -45,7 +45,9 @@ document.getElementById("form").addEventListener("submit", (e) => {
     return;
   }
 
-  const ganhosSelecionados = Array.from(document.querySelectorAll('input[name="ganho"]:checked'))
+  const ganhosSelecionados = Array.from(
+    document.querySelectorAll('input[name="ganho"]:checked')
+  )
     .map(el => el.value)
     .join(", ");
 
