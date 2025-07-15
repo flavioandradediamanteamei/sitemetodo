@@ -2,86 +2,80 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Método Robô Clara • Projeto Diamantes</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1 class="titulo-responsivo">Método Robô Clara</h1>
+    <h1 style="color: orange;">Método Robô Clara</h1>
     <h2>Projeto Diamantes • Amei Cosméticos com Flávio Andrade</h2>
-    <p class="impacto">“Oportunidade para transformar vidas — começando pela sua.”</p>
+    <p><em>“Oportunidade para transformar vidas — começando pela sua.”</em></p>
   </header>
 
-  <section id="video">
-    <div class="video-container">
-      <iframe id="meu-video" src="https://www.youtube.com/embed/Ic0YEIO2J1k?enablejsapi=1" title="Entenda o Projeto" allowfullscreen></iframe>
+  <div class="video-container">
+    <div id="player">
+      <iframe id="meu-video" width="100%" height="450" src="https://www.youtube.com/embed/YOUTUBE_ID_AQUI?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
     </div>
-  </section>
+  </div>
 
   <div id="conteudo-revelado">
-    <section id="opcoes">
+    <form id="form">
       <h3>Quanto você está disposto(a) a investir?</h3>
 
       <label class="opcao">
-        <div class="linha-radio">
-          <input type="radio" name="investimento" value="Iniciante" required />
-          <strong>Iniciante:</strong> R$ 200,00 a R$ 500,00
+        <input type="radio" name="investimento" value="Iniciante: R$ 200,00 a R$ 500,00" />
+        <div>
+          <strong>Iniciante:</strong> R$ 200,00 a R$ 500,00<br/>
+          <span class="descricao">Ideal para quem está começando e quer conhecer os produtos da Amei Cosméticos...</span>
         </div>
-        <span class="descricao">Ideal para quem está começando e quer conhecer os produtos da Amei Cosméticos...</span>
       </label>
 
       <label class="opcao">
-        <div class="linha-radio">
-          <input type="radio" name="investimento" value="Intermediário" />
-          <strong>Intermediário:</strong> R$ 500,00 a R$ 1.500,00
+        <input type="radio" name="investimento" value="Intermediário: R$ 500,00 a R$ 1.500,00" />
+        <div>
+          <strong>Intermediário:</strong> R$ 500,00 a R$ 1.500,00<br/>
+          <span class="descricao">Para quem busca renda extra, com potencial de lucros proporcionais ao investimento...</span>
         </div>
-        <span class="descricao">Para quem busca renda extra, com potencial de lucros proporcionais ao investimento...</span>
       </label>
 
       <label class="opcao">
-        <div class="linha-radio">
-          <input type="radio" name="investimento" value="Avançado" />
-          <strong>Avançado:</strong> R$ 1.500,00 a R$ 3.000,00
+        <input type="radio" name="investimento" value="Avançado: R$ 1.500,00 a R$ 3.000,00" />
+        <div>
+          <strong>Avançado:</strong> R$ 1.500,00 a R$ 3.000,00<br/>
+          <span class="descricao">Indicado para vendedores experientes que querem crescer rápido...</span>
         </div>
-        <span class="descricao">Indicado para vendedores experientes que querem crescer rápido...</span>
       </label>
 
       <label class="opcao">
-        <div class="linha-radio">
-          <input type="radio" name="investimento" value="Expert" />
-          <strong>Mentoria com Flávio Andrade:</strong> Acima de R$ 3.000,00
+        <input type="radio" name="investimento" value="Mentoria com Flávio Andrade: Acima de R$ 3.000,00" />
+        <div>
+          <strong>Mentoria com Flávio Andrade:</strong> Acima de R$ 3.000,00<br/>
+          <span class="descricao">Esse é o plano com acesso direto ao Flávio Andrade, incluindo mentoria e suporte premium.</span>
         </div>
-        <span class="descricao">Esse é o plano com acesso direto ao Flávio Andrade, incluindo mentoria e suporte premium.</span>
       </label>
-    </section>
 
-    <section id="formulario">
       <h3>Preencha seus dados:</h3>
-      <form id="form">
-        <input name="nome" placeholder="Nome completo" required />
-        <input name="whatsapp" placeholder="WhatsApp (somente números)" required />
-        <input name="email" type="email" placeholder="E‑mail" required />
-        <input name="cidade" placeholder="Cidade/Estado" required />
 
-        <fieldset>
-          <legend>Você já é líder?</legend>
-          <textarea name="experiencia" placeholder="Cite empresas e resultados"></textarea>
+      <input type="text" name="nome" placeholder="Nome completo" required />
+      <input type="text" name="whatsapp" placeholder="WhatsApp (somente números)" required />
+      <input type="email" name="email" placeholder="E-mail" required />
+      <input type="text" name="cidade" placeholder="Cidade/Estado" required />
+      <label for="experiencia">Você já é líder?</label>
+      <textarea name="experiencia" placeholder="Cite empresas e resultados"></textarea>
 
-          <p class="detalhe">Já em média quanto nesse mercado?</p>
-          <div class="grupo-checkbox">
-            <label><input type="checkbox" name="ganho" value="R$ 1.000,00 a R$ 3.000,00" /> R$ 1.000,00 a R$ 3.000,00</label>
-            <label><input type="checkbox" name="ganho" value="R$ 3.000,00 a R$ 5.000,00" /> R$ 3.000,00 a R$ 5.000,00</label>
-            <label><input type="checkbox" name="ganho" value="Acima de R$ 5.000,00" /> Acima de R$ 5.000,00</label>
-          </div>
-        </fieldset>
+      <h3>Já em média quanto nesse mercado?</h3>
+      <fieldset class="grupo-checkbox">
+        <label><input type="checkbox" name="ganho" value="R$ 1.000,00 a R$ 3.000,00" /> R$ 1.000,00 a R$ 3.000,00</label>
+        <label><input type="checkbox" name="ganho" value="R$ 3.000,00 a R$ 5.000,00" /> R$ 3.000,00 a R$ 5.000,00</label>
+        <label><input type="checkbox" name="ganho" value="Acima de R$ 5.000,00" /> Acima de R$ 5.000,00</label>
+      </fieldset>
 
-        <button type="submit" class="cta">🚀 Quero fazer parte do movimento! 🚀</button>
-      </form>
-    </section>
+      <button class="cta" type="submit">🚀 Quero fazer parte do movimento! 🚀</button>
+    </form>
 
     <footer>
-      <p>Projeto Diamantes com o Robô Clara • Amei Cosméticos com Flávio Andrade</p>
+      Projeto Diamantes com o Robô Clara • Amei Cosméticos com Flávio Andrade
     </footer>
   </div>
 
