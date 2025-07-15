@@ -1,170 +1,103 @@
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background: #fff;
-  color: #000;
+  text-align: center;
 }
 
 header {
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-.titulo-responsivo {
-  color: #ff6600;
-  font-size: 2.5rem;
-  margin: .5rem 0;
-}
-
-header h2 {
-  color: #333;
-  font-size: 1.2rem;
-  margin: .3rem 0;
-}
-
-.impacto {
-  font-style: italic;
-  margin: 1rem 0;
+  padding: 20px;
 }
 
 .video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
+  padding: 10px;
 }
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+iframe#meu-video {
   width: 100%;
-  height: 100%;
+  height: 450px;
+  display: block;
+  margin: 0 auto;
 }
 
 #conteudo-revelado {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 1rem;
   display: none;
   opacity: 0;
   transition: opacity 1s ease;
+  padding: 20px;
 }
 
 #conteudo-revelado.mostrar {
-  display: block !important;
+  display: block;
   opacity: 1;
 }
 
-#opcoes,
-#formulario {
-  width: 100%;
-  margin-bottom: 2rem;
-}
-
 .opcao {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  display: block;
+  text-align: left;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 }
 
 .linha-radio {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 10px;
+  margin-bottom: 5px;
 }
 
-.opcao input[type="radio"],
-#formulario input[type="checkbox"] {
-  transform: scale(1.2);
-  cursor: pointer;
+.descricao {
+  font-size: 14px;
+  color: #555;
 }
 
-.opcao .descricao {
-  font-size: 0.95rem;
-  color: #333;
-  line-height: 1.4;
-  margin-left: 1.8rem;
+form {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-#formulario form {
-  display: flex;
-  flex-direction: column;
-}
-
-#formulario input,
-#formulario textarea {
+input, textarea {
   width: 100%;
-  padding: .7rem;
-  margin-bottom: .8rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
-#formulario .grupo-checkbox {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  margin-top: 0.5rem;
-  padding-left: 0.2rem;
+fieldset {
+  border: none;
+  padding: 0;
+  margin-top: 20px;
 }
 
-#formulario .grupo-checkbox label {
+.grupo-checkbox label {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 0.95rem;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
-#formulario .detalhe {
-  font-size: .9rem;
-  color: #333;
-  margin: 1rem 0 0.3rem;
-  font-weight: bold;
-}
-
-#formulario button.cta {
-  background: #000;
-  color: #fff;
+button.cta {
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  padding: 15px 30px;
   border: none;
-  padding: .8rem;
-  font-size: 1.1rem;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 20px;
   width: 100%;
 }
 
 footer {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-  font-size: .9rem;
-}
-
-@media (max-width: 768px) {
-  .titulo-responsivo {
-    font-size: 2rem;
-    white-space: normal;
-  }
-
-  .linha-radio,
-  .grupo-checkbox label {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .opcao .descricao {
-    margin-left: 0;
-  }
+  background-color: black;
+  color: white;
+  padding: 20px;
+  font-size: 14px;
 }
