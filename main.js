@@ -3,6 +3,7 @@ let verificado = false;
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("meu-video", {
+    videoId: "Ic0YEIO2J1k",
     events: {
       onStateChange: onPlayerStateChange,
     },
