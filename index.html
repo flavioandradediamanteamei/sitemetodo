@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Método Robô Clara • Projeto Diamantes</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -23,44 +23,44 @@
 
       <label class="opcao">
         <div class="linha-radio">
-          <input type="radio" name="investimento" value="Iniciante" required>
+          <input type="radio" name="investimento" value="Iniciante" required />
           <strong>Iniciante:</strong> R$ 200,00 a R$ 500,00
         </div>
-        <span class="descricao">Ideal para quem está começando e quer conhecer os produtos da Amei Cosméticos. A revenda é feita de forma independente, com acesso aos treinamentos básicos nos grupos da empresa. Você será redirecionado(a) a um líder apenas para suporte inicial, sem acompanhamento estratégico. Perfeito para dar o primeiro passo e testar a qualidade dos produtos.</span>
+        <span class="descricao">Ideal para quem está começando e quer conhecer os produtos da Amei Cosméticos...</span>
       </label>
 
       <label class="opcao">
         <div class="linha-radio">
-          <input type="radio" name="investimento" value="Intermediário">
+          <input type="radio" name="investimento" value="Intermediário" />
           <strong>Intermediário:</strong> R$ 500,00 a R$ 1.500,00
         </div>
-        <span class="descricao">Para quem busca renda extra, com potencial de lucros proporcionais ao investimento. Nessa modalidade, você recebe acompanhamento de um líder do time do Flávio Andrade, com foco em estratégias de vendas. Com essa estrutura, é possível alcançar uma renda mensal de até R$ 1.500,00 (seguindo nosso método).</span>
+        <span class="descricao">Para quem busca renda extra, com potencial de lucros proporcionais ao investimento...</span>
       </label>
 
       <label class="opcao">
         <div class="linha-radio">
-          <input type="radio" name="investimento" value="Avançado">
+          <input type="radio" name="investimento" value="Avançado" />
           <strong>Avançado:</strong> R$ 1.500,00 a R$ 3.000,00
         </div>
-        <span class="descricao">Indicado para vendedores experientes que querem crescer rápido ou que já atuam no mercado. Você será acompanhado(a) por um mentor mais capacitado do time do Flávio Andrade, com foco em liderança, expansão e lucros acima de R$ 3.000,00.</span>
+        <span class="descricao">Indicado para vendedores experientes que querem crescer rápido...</span>
       </label>
 
       <label class="opcao">
         <div class="linha-radio">
-          <input type="radio" name="investimento" value="Expert">
+          <input type="radio" name="investimento" value="Expert" />
           <strong>Mentoria com Flávio Andrade:</strong> Acima de R$ 3.000,00
         </div>
-        <span class="descricao">Acesso direto ao Flávio Andrade, incluindo: mentoria individual via WhatsApp, grupo exclusivo com treinamentos intensivos, apoio para formar time e qualificar Diamante em até 90 dias, distribuição de leads. Investimento inicial acima de R$ 3.000,00 + ativação mensal VIP500.</span>
+        <span class="descricao">Esse é o plano com acesso direto ao Flávio Andrade, incluindo mentoria e suporte premium.</span>
       </label>
     </section>
 
     <section id="formulario">
       <h3>Preencha seus dados:</h3>
       <form id="form">
-        <input name="nome" placeholder="Nome completo" required>
-        <input name="whatsapp" placeholder="WhatsApp (somente números)" required>
-        <input name="email" type="email" placeholder="E‑mail" required>
-        <input name="cidade" placeholder="Cidade/Estado" required>
+        <input name="nome" placeholder="Nome completo" required />
+        <input name="whatsapp" placeholder="WhatsApp (somente números)" required />
+        <input name="email" type="email" placeholder="E‑mail" required />
+        <input name="cidade" placeholder="Cidade/Estado" required />
 
         <fieldset>
           <legend>Você já é líder?</legend>
@@ -68,9 +68,18 @@
 
           <p class="detalhe">Já em média quanto nesse mercado?</p>
           <div class="grupo-checkbox">
-            <label><input type="checkbox" name="ganho" value="R$ 1.000,00 a R$ 3.000,00"> R$ 1.000,00 a R$ 3.000,00</label>
-            <label><input type="checkbox" name="ganho" value="R$ 3.000,00 a R$ 5.000,00"> R$ 3.000,00 a R$ 5.000,00</label>
-            <label><input type="checkbox" name="ganho" value="Acima de R$ 5.000,00"> Acima de R$ 5.000,00</label>
+            <label>
+              <input type="checkbox" name="ganho" value="R$ 1.000,00 a R$ 3.000,00" />
+              R$ 1.000,00 a R$ 3.000,00
+            </label>
+            <label>
+              <input type="checkbox" name="ganho" value="R$ 3.000,00 a R$ 5.000,00" />
+              R$ 3.000,00 a R$ 5.000,00
+            </label>
+            <label>
+              <input type="checkbox" name="ganho" value="Acima de R$ 5.000,00" />
+              Acima de R$ 5.000,00
+            </label>
           </div>
         </fieldset>
 
@@ -83,15 +92,16 @@
     </footer>
   </div>
 
+  <!-- Script do vídeo -->
   <script>
     let player;
     let verificado = false;
 
     function onYouTubeIframeAPIReady() {
-      player = new YT.Player('meu-video', {
+      player = new YT.Player("meu-video", {
         events: {
-          'onStateChange': onPlayerStateChange
-        }
+          onStateChange: onPlayerStateChange,
+        },
       });
     }
 
@@ -102,22 +112,65 @@
           const tempoAtual = player.getCurrentTime();
           if (tempoAtual >= 220) {
             clearInterval(intervalo);
-            const conteudo = document.getElementById('conteudo-revelado');
-            conteudo.classList.add('mostrar');
+            const conteudo = document.getElementById("conteudo-revelado");
+            conteudo.classList.add("mostrar");
             window.scrollTo({
               top: conteudo.offsetTop,
-              behavior: 'smooth'
+              behavior: "smooth",
             });
           }
         }, 1000);
       }
     }
 
-    const tag = document.createElement('script');
+    const tag = document.createElement("script");
     tag.src = "https://www.youtube.com/iframe_api";
     document.body.appendChild(tag);
   </script>
 
-  <script src="main.js"></script>
+  <!-- Script de envio para WhatsApp -->
+  <script>
+    document.getElementById("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const dados = new FormData(e.target);
+      const info = Object.fromEntries(dados);
+      const numeroWhats = info.whatsapp.replace(/\D/g, "");
+
+      if (!info.email.includes("@")) {
+        alert("Digite um e‑mail válido.");
+        return;
+      }
+
+      const opcaoSelecionada = document.querySelector('input[name="investimento"]:checked');
+      if (!opcaoSelecionada) {
+        alert("Por favor, selecione uma opção de investimento.");
+        return;
+      }
+
+      const ganhosSelecionados = Array.from(
+        document.querySelectorAll('input[name="ganho"]:checked')
+      )
+        .map((el) => el.value)
+        .join(", ");
+
+      const texto = `🚀 Flávio Andrade, eu quero fazer parte desse movimento, fico no aguardo... Segue minhas informações para redirecionamento:
+
+👤 Nome: ${info.nome}
+📱 WhatsApp: ${numeroWhats}
+📧 Email: ${info.email}
+📍 Cidade: ${info.cidade}
+
+💼 Já é líder? ${info.experiencia || "Não informado"}
+💸 Já ganhou entre: ${ganhosSelecionados || "Não informado"}
+
+🔥 Opção de investimento: ${opcaoSelecionada.value}
+`;
+
+      const numeroFlavio = "13991545873";
+      const link = "https://wa.me/" + numeroFlavio + "?text=" + encodeURIComponent(texto);
+      window.open(link, "_blank");
+    });
+  </script>
 </body>
 </html>
