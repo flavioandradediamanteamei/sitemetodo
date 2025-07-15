@@ -33,7 +33,7 @@ header {
 /* ✅ AJUSTE IDEAL PARA CELULAR */
 @media (max-width: 600px) {
   #meu-video iframe {
-    height: 200px;
+    height: 160px;
   }
 }
 
