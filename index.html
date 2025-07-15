@@ -68,17 +68,17 @@
 
           <p class="detalhe">Já em média quanto nesse mercado?</p>
           <div class="grupo-checkbox">
-            <label class="linha-radio">
+            <label>
               <input type="checkbox" name="ganho" value="R$ 1.000,00 a R$ 3.000,00" />
-              R$ 1.000,00 a R$ 3.000,00
+              <span>R$ 1.000,00 a R$ 3.000,00</span>
             </label>
-            <label class="linha-radio">
+            <label>
               <input type="checkbox" name="ganho" value="R$ 3.000,00 a R$ 5.000,00" />
-              R$ 3.000,00 a R$ 5.000,00
+              <span>R$ 3.000,00 a R$ 5.000,00</span>
             </label>
-            <label class="linha-radio">
+            <label>
               <input type="checkbox" name="ganho" value="Acima de R$ 5.000,00" />
-              Acima de R$ 5.000,00
+              <span>Acima de R$ 5.000,00</span>
             </label>
           </div>
         </fieldset>
@@ -92,7 +92,6 @@
     </footer>
   </div>
 
-  <!-- Script do vídeo -->
   <script>
     let player;
     let verificado = false;
@@ -128,7 +127,6 @@
     document.body.appendChild(tag);
   </script>
 
-  <!-- Script de envio para WhatsApp -->
   <script>
     document.getElementById("form").addEventListener("submit", (e) => {
       e.preventDefault();
