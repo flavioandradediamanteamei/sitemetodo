@@ -64,6 +64,7 @@ form {
   gap: 15px;
 }
 
+/* ✅ Os campos agora respeitam a largura da .container */
 input[type="text"],
 input[type="tel"],
 input[type="email"],
@@ -71,6 +72,7 @@ textarea {
   width: 100%;
   padding: 10px;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
 textarea {
@@ -112,7 +114,7 @@ footer {
   font-size: 14px;
 }
 
-/* ✅ NOVO BLOCO PARA CENTRALIZAR O CONTEÚDO ABAIXO DO VÍDEO */
+/* ✅ Centraliza apenas o bloco dos dados pessoais */
 .container {
   max-width: 800px;
   margin: 0 auto;
