@@ -61,7 +61,7 @@ header {
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px; /* ✅ aumentei o espaçamento entre blocos do formulário */
 }
 
 /* ✅ Os campos agora respeitam a largura da .container */
@@ -70,18 +70,20 @@ input[type="tel"],
 input[type="email"],
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
   box-sizing: border-box;
+  margin-bottom: 10px; /* ✅ margem extra entre inputs */
 }
 
 textarea {
   resize: vertical;
+  min-height: 80px;
 }
 
 label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .checkbox-group {
@@ -97,7 +99,7 @@ label {
 }
 
 button {
-  padding: 12px;
+  padding: 14px;
   background: black;
   color: white;
   font-size: 16px;
@@ -114,7 +116,7 @@ footer {
   font-size: 14px;
 }
 
-/* ✅ Centraliza apenas o bloco dos dados pessoais */
+/* ✅ Centraliza todo o conteúdo abaixo do vídeo */
 .container {
   max-width: 800px;
   margin: 0 auto;
