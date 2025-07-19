@@ -111,3 +111,11 @@ footer {
   padding: 20px;
   font-size: 14px;
 }
+
+/* ✅ NOVO BLOCO PARA CENTRALIZAR O CONTEÚDO ABAIXO DO VÍDEO */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
