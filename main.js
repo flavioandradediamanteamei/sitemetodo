@@ -1,34 +1,38 @@
-let player;
 let verificado = false;
+let tempoAssistido = 0;
 
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player("meu-video", {
-    videoId: "Ic0YEIO2J1k", // ID corrigido do vídeo
-    events: {
-      onStateChange: onPlayerStateChange,
-    },
-  });
-}
+const vimeoIframe = document.createElement("iframe");
+vimeoIframe.src = "https://player.vimeo.com/video/1107784309?autoplay=1&muted=0&title=0&byline=0&portrait=0";
+vimeoIframe.frameBorder = "0";
+vimeoIframe.allow = "autoplay; fullscreen; picture-in-picture";
+vimeoIframe.allowFullscreen = true;
+vimeoIframe.style.width = "100%";
+vimeoIframe.style.height = "100%";
+vimeoIframe.style.maxWidth = "800px";
+vimeoIframe.style.aspectRatio = "16/9";
+vimeoIframe.style.display = "block";
+vimeoIframe.style.margin = "auto";
 
-function onPlayerStateChange(event) {
-  if (event.data === YT.PlayerState.PLAYING && !verificado) {
-    verificado = true;
-    const intervalo = setInterval(() => {
-      const tempoAtual = player.getCurrentTime();
-      if (tempoAtual >= 220) {
+document.getElementById("meu-video").appendChild(vimeoIframe);
+
+// Espera o Vimeo carregar para ativar o controle de tempo
+vimeoIframe.addEventListener("load", () => {
+  const player = new Vimeo.Player(vimeoIframe);
+
+  const intervalo = setInterval(() => {
+    player.getCurrentTime().then(function (seconds) {
+      if (!verificado && seconds >= 220) {
+        verificado = true;
         clearInterval(intervalo);
         const conteudo = document.getElementById("conteudo-revelado");
         conteudo.classList.add("mostrar");
         window.scrollTo({ top: conteudo.offsetTop, behavior: "smooth" });
       }
-    }, 1000);
-  }
-}
+    });
+  }, 1000);
+});
 
-const tag = document.createElement("script");
-tag.src = "https://www.youtube.com/iframe_api";
-document.body.appendChild(tag);
-
+// FORMULÁRIO DE ENVIO (sem alteração)
 document.getElementById("form").addEventListener("submit", (e) => {
   e.preventDefault();
   const dados = new FormData(e.target);
